@@ -1,0 +1,23 @@
+name: Lint
+
+on: push
+
+jobs:
+  lint:
+    name: Lint code base
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15.x
+      - name: Install modules
+        working-directory: ./server
+        run: npm install
+      - name:  Run eslint
+        working-directory: ./server
+        run: npm run lint
