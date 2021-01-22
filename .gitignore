@@ -1,3 +1,6 @@
+# top namespace
+.env
+
 # server namespace
 server/node_modules
 server/uploads/dices/**
