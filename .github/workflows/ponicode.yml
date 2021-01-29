@@ -17,7 +17,7 @@ jobs:
       - uses: ponicode/unit-testing-action@master
         id: ponicode
         with:
-          repoPath: ./server/
+          repoPath: ./server/src/
           authToken: ${{ secrets.PONICODE_TOKEN }}
 
         # Creates pull request with all changes in file
