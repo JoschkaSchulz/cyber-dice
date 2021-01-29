@@ -7,3 +7,7 @@ server/uploads/dices/**
 
 # firmware namespace
 firmware/CyberDiceFirmware/wifi_config.h
+
+# docker volumes
+file_uploads
+database

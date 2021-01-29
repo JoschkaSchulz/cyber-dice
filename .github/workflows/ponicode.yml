@@ -1,23 +1,20 @@
 name: automated-test-writing with ponicode
 
-on:
-  push:
-    branches: [master]
+on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       # checkout your code with your git history (mandatory to changedFilesOnly option)
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       # Unit tests your functions with Ponicode action
       - uses: ponicode/unit-testing-action@master
         id: ponicode
         with:
-          repoPath: ./server/
+          repoPath: ./server
           authToken: ${{ secrets.PONICODE_TOKEN }}
 
         # Creates pull request with all changes in file
